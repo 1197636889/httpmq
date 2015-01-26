@@ -198,7 +198,7 @@ func main() {
 		num := r.FormValue("num")
 		charset := r.FormValue("charset")
 
-		if *default_auth != "" && *default_auth != auth {
+		if opt != "put" && (*default_auth != "" && *default_auth != auth) {
 			w.Write([]byte("HTTPMQ_AUTH_FAILED"))
 			return
 		}
